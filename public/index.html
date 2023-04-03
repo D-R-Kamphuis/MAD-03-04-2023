@@ -7,36 +7,22 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test-3-4-2023</title>
+    <script>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+            .then(() => console.log("Service Worker Registered"))
+            .catch(e => console.log(e));
+        }
+      </script>
 </head>
 <body>
     
     <ons-button onclick="alert('You clicked me!')">Click Me</ons-button>
-    <button id="rotate-btn">Rotate Screen</button>
 
     <style>
     body {
   animation: color-change 5s infinite;
   transform-origin: center center;
-  
-}
-
-@keyframes rotate-screen {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#rotate-btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-#rotate-btn:focus {
-  animation: rotate-screen 2s ease-in-out forwards;
 }
 
 
