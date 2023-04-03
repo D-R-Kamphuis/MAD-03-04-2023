@@ -11,10 +11,32 @@
 <body>
     
     <ons-button onclick="alert('You clicked me!')">Click Me</ons-button>
+    <button id="rotate-btn">Rotate Screen</button>
+
     <style>
     body {
   animation: color-change 5s infinite;
   transform-origin: center center;
+  
+}
+
+@keyframes rotate-screen {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#rotate-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#rotate-btn:focus {
+  animation: rotate-screen 2s ease-in-out forwards;
 }
 
 
